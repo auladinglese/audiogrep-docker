@@ -1,12 +1,10 @@
 # DOCKER-VERSION 1.4.0
-FROM ubuntu:14.04
+FROM ubuntu:20.04
 
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 
 # FFMPEG
-RUN apt-add-repository ppa:mc3man/trusty-media
-RUN apt-get update
 RUN apt-get install -y ffmpeg
 
 # PocketSpinx
@@ -18,7 +16,7 @@ RUN apt-get install -y pocketsphinx-lm-wsj
 RUN apt-get install -y git python python-pip
 
 # audiogrep
-RUN git clone https://github.com/kevinhughes27/audiogrep.git
+RUN git clone https://github.com/auladinglese/audiogrep.git
 RUN cd audiogrep && pip install -r requirements.txt
 
 # install
